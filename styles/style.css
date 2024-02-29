@@ -212,14 +212,9 @@
 
 .gallery {
   display: grid;
-  gap: 20px;
-}
-
-.gallery {
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 20px 20px;
+  gap: 20px;
   grid-template-areas:
     "sunset sunset ice-cream"
     "tape books ice-cream"
@@ -255,10 +250,6 @@
   grid-area: street;
 }
 
-.footer__title {
-  inset-inline-start: 0;
-}
-
 .footer {
   block-size: 100vh;
   min-block-size: 668px;
@@ -268,6 +259,7 @@
 }
 
 .footer__title {
+  inset-inline-start: 0;
   font-weight: 700;
   color: var(--color-header-title);
   padding: 0 4px;

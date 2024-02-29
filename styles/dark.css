@@ -50,24 +50,4 @@
   color: var(--accent-color);
 }
 
-.header__decoration::after {
-  content: "REC";
-  position: absolute;
-  color: var(--decoration-color);
-  line-height: 25px;
-  inset-inline-end: 49px;
-  inset-block-start: 20px;
-}
 
-.header__decoration::before {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  inline-size: 9px;
-  block-size: 9px;
-  background-color: var(--decoration-color);
-  border-radius: 100%;
-  box-shadow: 0px 0px 4px 2px var(--decoration-color);
-  inset-block-start: 29px;
-  inset-inline-end: 29px;
-}

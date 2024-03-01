@@ -12,7 +12,7 @@
   --bg-color-accent: #ff8dcb;
   --bg-color-page: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);
-  
+  --hover-color: rgba(50, 49, 45, 0.4);
 }
 
 @media (prefers-color-scheme: light) {

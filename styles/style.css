@@ -139,7 +139,7 @@
   color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 7.81vh 0;
+  gap: 80px;
   padding: 60px 20px 80px;
 }
 
@@ -249,7 +249,6 @@
 
 .footer {
   block-size: 100vh;
-  min-block-size: 668px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -368,7 +367,6 @@
   }
 
   .content {
-    gap: 80px;
     padding: 5.859vh 20px;
   }
 
@@ -417,7 +415,6 @@
 
   .content {
     padding: 7.81vh 20px 7.81vh;
-    gap: 80px;
   }
 
   .content__text-one-column {

@@ -39,8 +39,5 @@
   --bg-color-accent: #ff8dcb;
   --bg-color-page: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);
-
-  font-family: var(--font-family), sans-serif;
-  background-image: var(--bg-image);
-  background-color: var(--bg-color-page);
+  --decoration-color: transparent;
 }

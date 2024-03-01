@@ -97,7 +97,7 @@
   padding: 3px 13px;
   text-transform: lowercase;
   line-height: inherit;
-  color: var(--accent-color-text);
+  color: var(--accent-color);
 }
 
 .header__theme-menu-button_active {
@@ -393,7 +393,7 @@
   .header {
     padding-inline-end: 0;
   }
-  
+
   .header__text {
     margin-inline-end: 20px;
   }

@@ -18,36 +18,6 @@
   --bg-image: url(../images/cover-image-dark.png);
   --font-family: 'IBM Plex Mono';
   --decoration-color: #ff0070;
-
-  font-family: var(--font-family), sans-serif;
-  background-image: var(--bg-image);
-  background-color: var(--bg-color-page);
-}
-
-.header__decoration::after {
-  content: "REC";
-  position: absolute;
-  color: var(--accent-color);
-  line-height: 25px;
-  inset-inline-end: 49px;
-  inset-block-start: 20px;
-}
-
-.header__decoration::before {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  inline-size: 9px;
-  block-size: 9px;
-  background-color: var(--accent-color);
-  border-radius: 100%;
-  box-shadow: 0px 0px 4px 2px var(--bg-color-accent);
-  inset-block-start: 29px;
-  inset-inline-end: 29px;
-}
-
-.header__theme-menu-button {
-  color: var(--accent-color);
 }
 
 

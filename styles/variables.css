@@ -12,4 +12,5 @@
   --bg-image: url(../images/cover-image-dark.png);
   --font-family: 'IBM Plex Mono';
   --decoration-color: #ff0070;
+  --hover-color: rgba(50, 49, 45, 0.4);
 }

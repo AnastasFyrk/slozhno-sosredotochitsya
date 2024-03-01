@@ -3,11 +3,10 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   position: relative;
-  font-family: var(--font-family), sans-serif;
+  font-family: var(--font-family), monospace;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.3;
-  letter-spacing: 0;
   background-image: var(--bg-image);
   background-color: var(--bg-color-page);
   background-position: center;
@@ -21,7 +20,6 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   block-size: 100vh;
-  min-block-size: 668px;
   align-items: center;
   justify-items: end;
   padding-inline-end: 0;
@@ -31,7 +29,7 @@
   content: "REC";
   position: absolute;
   color: var(--decoration-color);
-  line-height: 25px;
+  line-height: 1.39;
   inset-inline-end: 49px;
   inset-block-start: 20px;
 }
@@ -43,7 +41,7 @@
   inline-size: 9px;
   block-size: 9px;
   background-color: var(--decoration-color);
-  border-radius: 100%;
+  border-radius: 50%;
   box-shadow: 0px 0px 4px 2px var(--decoration-color);
   inset-block-start: 29px;
   inset-inline-end: 29px;
@@ -88,16 +86,15 @@
 }
 
 .header__theme-menu-button {
-  background: none;
+  background-color: transparent;
+  appearance: none;
   border: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   padding: 3px 13px;
   text-transform: lowercase;
   line-height: inherit;
   color: var(--accent-color);
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
@@ -106,7 +103,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--hover-color);
 }
 
 .header__theme-menu-button:focus {
@@ -127,8 +124,6 @@
 
 .header__text {
   inline-size: 30.6875rem;
-  line-height: 1.3;
-  font-weight: 700;
 }
 
 .title-decor {
@@ -153,6 +148,7 @@
   line-height: 1.3;
   font-weight: 700;
   color: var(--accent-color);
+  max-width: 35vw;
 }
 
 .content__text-one-column {
@@ -200,7 +196,6 @@
 
 .content__list {
   padding: 10px 0 0;
-  list-style-type: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -210,20 +205,21 @@
   font-weight: 400;
 }
 
-.gallery {
+.content__images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content__gallery {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   gap: 20px;
-  grid-template-areas:
-    "sunset sunset ice-cream"
-    "tape books ice-cream"
-    "tape street street";
-  block-size: 136.458vh;
   inline-size: 100%;
 }
 
-.gallery__image {
+.content__gallery-image {
+  display: block;
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
@@ -231,23 +227,24 @@
 }
 
 .sunset {
-  grid-area: sunset;
+  grid-column: span 2;
 }
 
 .ice-cream {
-  grid-area: ice-cream;
+  grid-row: span 2;
 }
 
 .tape {
-  grid-area: tape;
+  grid-row: span 2;
 }
 
 .books {
-  grid-area: books;
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .street {
-  grid-area: street;
+  grid-column: span 2;
 }
 
 .footer {
@@ -259,16 +256,16 @@
 }
 
 .footer__title {
-  inset-inline-start: 0;
-  font-weight: 700;
-  color: var(--color-header-title);
-  padding: 0 4px;
   text-shadow: 2px 2px 0 var(--bg-color-accent);
 }
 
-@media (min-width: 375px) and (width < 768px) {
+@media (375px <= width < 768px) {
   .page {
     padding: 0px 10px;
+  }
+
+  .header {
+    min-block-size: 668px;
   }
 
   .decorated-zone::before {
@@ -301,9 +298,11 @@
 
   .content {
     padding: 5.98vh 0 5.98vh;
-    display: flex;
-    flex-direction: column;
     gap: 50px;
+  }
+
+  .content__title {
+    max-inline-size: 100%;
   }
 
   .content__text {
@@ -312,23 +311,49 @@
     gap: 20px;
   }
 
-  .gallery {
+  .content__images {
+    gap: 0;
+  }
+
+  .content__gallery {
     gap: 10px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-      "sunset"
-      "ice-cream"
-      "tape"
-      "books"
-      "street";
-    block-size: 204.49vh;
+  }
+
+  .sunset {
+    grid-column: 1;
+    grid-row: span 1;
+  }
+  
+  .ice-cream {
+    grid-column: 1;
+    grid-row: span 1;
+  }
+  
+  .tape {
+    grid-column: 1;
+    grid-row: span 1;
+  }
+  
+  .books {
+    grid-column: 1;
+    grid-row: span 1;
+  }
+  
+  .street {
+    grid-column: 1;
+    grid-row: span 1;
+  }
+
+  .footer {
+    min-block-size: 668px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023.9999px) {
+@media (768px <= width < 1024px) {
   .header {
     padding-inline-end: 20px;
+    min-block-size: 1024px;
   }
 
   .header__title {
@@ -343,22 +368,12 @@
   }
 
   .content {
-    display: flex;
-    flex-direction: column;
     gap: 80px;
     padding: 5.859vh 20px;
   }
 
   .content:last-child {
     padding-bottom: 7.81vh;
-  }
-
-  .content__text-one-column {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    gap: 20px;
-    grid-auto-flow: row;
   }
 
   .content__text-one-column .content__title {
@@ -374,28 +389,20 @@
     max-inline-size: 30.729vw;
   }
 
-  .gallery {
-    block-size: 76.17vh;
-  }
-
-  .content__images {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer__title {
-    inset-inline-start: 0;
+  .footer {
+    min-block-size: 1024px;
   }
 }
 
 @media (width >= 1024px) {
   .header {
     padding-inline-end: 0;
+    min-block-size: 768px;
   }
 
   .header__text {
     margin-inline-end: 20px;
+    margin-block-end: 20px;
   }
 
   .header__theme-menu {
@@ -410,8 +417,6 @@
 
   .content {
     padding: 7.81vh 20px 7.81vh;
-    display: flex;
-    flex-direction: column;
     gap: 80px;
   }
 
@@ -427,7 +432,7 @@
     gap: 20px 12px;
   }
 
-  .gallery {
-    block-size: 136.45vh;
+  .footer {
+    min-block-size: 768px;
   }
 }
